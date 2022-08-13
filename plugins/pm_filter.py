@@ -406,11 +406,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
-        ], [
+            InlineKeyboardButton('🔍 Search Here', switch_inline_query_current_chat='')
+        ],[
+            InlineKeyboardButton('📢 Tamil Mvs 2.0', url='https://t.me/Tamil_Mvs_Offl')
+        ],[
+            InlineKeyboardButton('👥 Request Group', url='https://t.me/+EVI0nUzt1yljZGU1')
+        ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('⚠️ Check Our Channels', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -438,9 +441,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria'),
-            InlineKeyboardButton('♥️ Source', callback_data='source')
+            InlineKeyboardButton('🟢 Tamil MVs Movies 2.0 🟢 ', url='https://t.me/+XfgDQL6fMiAzMmFl')
+        ],[
+            InlineKeyboardButton('🟡 Tamil Dubbed Movies 🟡', url='https://t.me/+ZB2uIDoIDVs1YWJl')
+        ],[
+            InlineKeyboardButton('🔵 Movies Requesting Group 🔵', url='https://t.me/+EVI0nUzt1yljZGU1')
+        ],[
+            InlineKeyboardButton('🟣 MX Cinemas (Links) 🟣', url='https://t.me/+w2rNCoE9JMBkYjc9')
         ], [
+            InlineKeyboardButton('⚪️ Web Series Tamil ⚪️', url='https://t.me/+kVEEFuW6bqJiZDk1')
+        ],[
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
         ]]
@@ -708,7 +718,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"Here is what i found for your query {search}"
+        cap = f"**💿 Mᴏᴠɪᴇ Nᴀᴍᴇ :** `{search}` \n\n<i>**Join Now :** @Tamil_Mvs_OFfl</i> "
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
