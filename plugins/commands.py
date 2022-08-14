@@ -232,9 +232,6 @@ async def start(client, message):
                 except:
                     return
             await msg.edit_caption(f_caption)
-            await message.reply_text('Hello',
-            quote=True,
-            parse_mode=html)
             return
         except:
             pass
@@ -257,9 +254,6 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         )
-    await message.reply_text('Hello',
-        quote=False,
-        parse_mode=html)
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))

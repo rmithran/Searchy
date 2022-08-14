@@ -400,6 +400,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
+        await reply.text('Hello')
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
