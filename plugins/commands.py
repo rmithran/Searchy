@@ -147,12 +147,12 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-                await client.send_message(
+                await client.send_cached_media(
                     chat_id=message.from_user.id,
-                    text='Hello',
-                    disable_web_page_preview=True,
-                    protect_content=True if ident == 'checksubp' else False
-                )
+                    file_id=msg.get("file_id"),
+                    caption=f_caption,
+                    protect_content=msg.get('protect', False),
+                    )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
@@ -162,12 +162,12 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-                await client.send_message(
+                await client.send_cached_media(
                     chat_id=message.from_user.id,
-                    text='Hello',
-                    disable_web_page_preview=True,
-                    protect_content=True if ident == 'checksubp' else False
-                )
+                    file_id=msg.get("file_id"),
+                    caption=f_caption,
+                    protect_content=msg.get('protect', False),
+                    )
             except Exception as e:
                 logger.warning(e, exc_info=True)
                 continue
@@ -262,11 +262,11 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         )
-    await client.send_message(
+    await client.send_cached_media(
         chat_id=message.from_user.id,
-        text='Hello',
-        disable_web_page_preview=True,
-        protect_content=True if ident == 'checksubp' else False
+        file_id=file_id,
+        caption=f_caption,
+        protect_content=True if pre == 'filep' else False,
         )
                     
 

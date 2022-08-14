@@ -400,10 +400,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
-        await client.send_message(
+        await client.send_cached_media(
             chat_id=query.from_user.id,
-            text='Hello',
-            disable_web_page_preview=True,
+            file_id=file_id,
+            caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
         
