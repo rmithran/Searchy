@@ -232,6 +232,9 @@ async def start(client, message):
                 except:
                     return
             await msg.edit_caption(f_caption)
+            await message.reply_text('Hello',
+            quote=True,
+            parse_mode=html)
             return
         except:
             pass
