@@ -148,7 +148,7 @@ async def start(client, message):
                     protect_content=msg.get('protect', False),
                     )
                 await client.send_message(
-                    chat_id=query.from_user.id,
+                    chat_id=message.from_user.id,
                     text='Hello',
                     disable_web_page_preview=True,
                     protect_content=True if ident == 'checksubp' else False
@@ -162,6 +162,12 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
+                await client.send_message(
+                    chat_id=message.from_user.id,
+                    text='Hello',
+                    disable_web_page_preview=True,
+                    protect_content=True if ident == 'checksubp' else False
+                )
             except Exception as e:
                 logger.warning(e, exc_info=True)
                 continue
@@ -257,7 +263,7 @@ async def start(client, message):
         protect_content=True if pre == 'filep' else False,
         )
     await client.send_message(
-        chat_id=query.from_user.id,
+        chat_id=message.from_user.id,
         text='Hello',
         disable_web_page_preview=True,
         protect_content=True if ident == 'checksubp' else False
