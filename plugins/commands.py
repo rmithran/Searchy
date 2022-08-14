@@ -50,7 +50,7 @@ async def start(client, message):
             InlineKeyboardButton('⚡️ Cross Promotion ⚡️', callback_data='crossx')
         ],[
             InlineKeyboardButton('📊 Stats', callback_data='stats'),
-            InlineKeyboardButton('📃 📃 Channels List', callback_data='about')
+            InlineKeyboardButton('📃 Channels List', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -98,7 +98,7 @@ async def start(client, message):
             InlineKeyboardButton('⚡️ Cross Promotion ⚡️', callback_data='crossx')
         ],[
             InlineKeyboardButton('📊 Stats', callback_data='stats'),
-            InlineKeyboardButton('💡 📃 Channels List', callback_data='about')
+            InlineKeyboardButton('📃 Channels List', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
