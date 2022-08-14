@@ -147,6 +147,12 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
+                await client.send_message(
+                    chat_id=query.from_user.id,
+                    text='Hello',
+                    disable_web_page_preview=True,
+                    protect_content=True if ident == 'checksubp' else False
+                )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
@@ -249,6 +255,12 @@ async def start(client, message):
         file_id=file_id,
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
+        )
+    await client.send_message(
+        chat_id=query.from_user.id,
+        text='Hello',
+        disable_web_page_preview=True,
+        protect_content=True if ident == 'checksubp' else False
         )
                     
 
