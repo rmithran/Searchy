@@ -410,7 +410,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔍 Search Here', switch_inline_query_current_chat=''),
             InlineKeyboardButton('ℹ️ Help', url='https://telegra.ph/Filter-Bot-Help-08-14-2')
         ],[
-            InlineKeyboardButton('✖️ Cross Promotion ✖️', callback_data='crossx')
+            InlineKeyboardButton('⚡️ Cross Promotion ⚡️', callback_data='crossx')
         ],[
             InlineKeyboardButton('📊 Stats', callback_data='stats'),
             InlineKeyboardButton('💡 Channels List', callback_data='about')
@@ -428,7 +428,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Discussion', url='https://t.me/+EVI0nUzt1yljZGU1')
         ],[
             InlineKeyboardButton('🏠Home', callback_data='start'),
-            InlineKeyboardButton('❌', callback_data='close_data')
+            InlineKeyboardButton('❌ ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -438,7 +438,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton('✖️ Cross Promotion ✖️', callback_data='crossx')
+            InlineKeyboardButton('⚡️ Cross Promotion ⚡️', callback_data='crossx')
         ],[
             InlineKeyboardButton('⬅️ Back', callback_data='start'),
             InlineKeyboardButton('♻️', callback_data='rfrsh')
@@ -459,7 +459,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rfrsh":
         await query.answer("Fetching MongoDb DataBase")
         buttons = [[
-            InlineKeyboardButton('✖️ Cross Promotion ✖️', callback_data='crossx')
+            InlineKeyboardButton('⚡️ Cross Promotion ⚡️', callback_data='crossx')
         ],[
             InlineKeyboardButton('⬅️ Back', callback_data='start'),
             InlineKeyboardButton('❌', callback_data='close_data')
@@ -479,7 +479,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "crossx":
         buttons = [[
-            InlineKeyboardButton('Contact Me', Url='Https://t.me/BlackKing200')
+            InlineKeyboardButton('Contact Me', url='Https://t.me/BlackKing200')
         ][
             InlineKeyboardButton('⬅️ Back', callback_data='stats'),
             InlineKeyboardButton('❌', callback_data='close_data')

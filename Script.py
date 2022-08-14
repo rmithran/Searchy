@@ -53,8 +53,8 @@ Name - {}
 """
     CROSS_TEXT = """If You want to Do cross promotion on your channels with me
     
-    contact me <b>@BlackKing200</b>
+contact me <b>@BlackKing200</b>
     
-    #Note Only Tamil Channels Only
+#Note Only Tamil Channels Only
     
-    before comming PM check my Channel Stats"""
+before comming PM check my Channel Stats"""
