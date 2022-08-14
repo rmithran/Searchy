@@ -413,7 +413,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⚡️ Cross Promotion ⚡️', callback_data='crossx')
         ],[
             InlineKeyboardButton('📊 Stats', callback_data='stats'),
-            InlineKeyboardButton('💡 Channels List', callback_data='about')
+            InlineKeyboardButton('💡 📃 Channels List', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
