@@ -44,13 +44,15 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
-            InlineKeyboardButton('🔍 Search Here', switch_inline_query_current_chat='')
+            InlineKeyboardButton('🔍 Search Here', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('ℹ️ Help', url='https://telegra.ph/Filter-Bot-Help-08-14-2')
         ],[
-            InlineKeyboardButton('📢 Main Channel', url='https://t.me/Tamil_Mvs_Offl'),
-            InlineKeyboardButton('👥 Request Group', url='https://t.me/+EVI0nUzt1yljZGU1')
+            InlineKeyboardButton('Movies Channel', url='https://t.me/+23cUpYdcgHtiOTVl')
         ],[
-            InlineKeyboardButton('ℹ️ Help', url='https://telegra.ph/Filter-Bot-Help-08-14-2'),
-            InlineKeyboardButton('⚠️ Check Our Channels', callback_data='about')
+            InlineKeyboardButton('Request Group', url='https://t.me/+EVI0nUzt1yljZGU1')
+        ],[
+            InlineKeyboardButton('📊 Stats', callback_data='stats'),
+            InlineKeyboardButton('💡 Channels List', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -92,13 +94,15 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
-            InlineKeyboardButton('🔍 Search Here', switch_inline_query_current_chat='')
+            InlineKeyboardButton('🔍 Search Here', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('ℹ️ Help', url='https://telegra.ph/Filter-Bot-Help-08-14-2')
         ],[
-            InlineKeyboardButton('📢 Main Channel', url='https://t.me/Tamil_Mvs_Offl'),
-            InlineKeyboardButton('👥 Request Group', url='https://t.me/+EVI0nUzt1yljZGU1')
+            InlineKeyboardButton('Movies Channel', url='https://t.me/+23cUpYdcgHtiOTVl')
         ],[
-            InlineKeyboardButton('ℹ️ Help', url='https://telegra.ph/Filter-Bot-Help-08-14-2'),
-            InlineKeyboardButton('⚠️ Check Our Channels', callback_data='about')
+            InlineKeyboardButton('Request Group', url='https://t.me/+EVI0nUzt1yljZGU1')
+        ],[
+            InlineKeyboardButton('📊 Stats', callback_data='stats'),
+            InlineKeyboardButton('💡 Channels List', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(

@@ -409,12 +409,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔍 Search Here', switch_inline_query_current_chat=''),
             InlineKeyboardButton('ℹ️ Help', url='https://telegra.ph/Filter-Bot-Help-08-14-2')
         ],[
-            InlineKeyboardButton('📢 Movies Channel', url='https://t.me/+23cUpYdcgHtiOTVl')
+            InlineKeyboardButton('Movies Channel', url='https://t.me/+23cUpYdcgHtiOTVl')
         ],[
-            InlineKeyboardButton('👥 Request Group', url='https://t.me/+EVI0nUzt1yljZGU1')
+            InlineKeyboardButton('Request Group', url='https://t.me/+EVI0nUzt1yljZGU1')
         ],[
-            InlineKeyboardButton('ℹ️ Stats', callback_data='stats'),
-            InlineKeyboardButton('⚠️ Our Channels', callback_data='about')
+            InlineKeyboardButton('📊 Stats', callback_data='stats'),
+            InlineKeyboardButton('💡 Channels List', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -427,6 +427,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('Channel', url='https://t.me/+23cUpYdcgHtiOTVl'),
             InlineKeyboardButton('Discussion', url='https://t.me/+EVI0nUzt1yljZGU1')
+        ],[
+            InlineKeyboardButton('❌', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
