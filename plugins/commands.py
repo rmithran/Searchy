@@ -47,8 +47,7 @@ async def start(client, message):
             InlineKeyboardButton('🔍 Search Here', switch_inline_query_current_chat=''),
             InlineKeyboardButton('ℹ️ Help', url='https://telegra.ph/Filter-Bot-Help-08-14-2')
         ],[
-            InlineKeyboardButton('Movies Channel', url='https://t.me/+23cUpYdcgHtiOTVl')
-        ],[
+            InlineKeyboardButton('Movies Channel', url='https://t.me/+23cUpYdcgHtiOTVl'),
             InlineKeyboardButton('Request Group', url='https://t.me/+EVI0nUzt1yljZGU1')
         ],[
             InlineKeyboardButton('📊 Stats', callback_data='stats'),
