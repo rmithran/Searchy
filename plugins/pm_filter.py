@@ -400,7 +400,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
-        await reply.text('Hello')
+        await client.send_message(chat_id=query.from_user.id,
+        text='Hello')
+
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
