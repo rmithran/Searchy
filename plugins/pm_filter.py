@@ -480,7 +480,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "crossx":
         buttons = [[
             InlineKeyboardButton('Contact Me', url='Https://t.me/BlackKing200')
-        ][
+        ],[
             InlineKeyboardButton('⬅️ Back', callback_data='stats'),
             InlineKeyboardButton('❌', callback_data='close_data')
         ]]
