@@ -400,20 +400,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
+        
+
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
-            InlineKeyboardButton('🔍 Search Here', switch_inline_query_current_chat='')
+            InlineKeyboardButton('🔍 Search Here', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('ℹ️ Help', url='https://telegra.ph/Filter-Bot-Help-08-14-2')
         ],[
-            InlineKeyboardButton('📢 Tamil Mvs 2.0', url='https://t.me/Tamil_Mvs_Offl')
+            InlineKeyboardButton('⚡️ Cross Promotion ⚡️', callback_data='crossx')
         ],[
-            InlineKeyboardButton('👥 Request Group', url='https://t.me/+EVI0nUzt1yljZGU1')
-        ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('⚠️ Check Our Channels', callback_data='about')
+            InlineKeyboardButton('📊 Stats', callback_data='stats'),
+            InlineKeyboardButton('💡 📃 Channels List', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -422,37 +423,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
         await query.answer('Piracy Is Crime')
-    elif query.data == "help":
-        buttons = [[
-            InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
-            InlineKeyboardButton('Auto Filter', callback_data='autofilter')
-        ], [
-            InlineKeyboardButton('Connection', callback_data='coct'),
-            InlineKeyboardButton('Extra Mods', callback_data='extra')
-        ], [
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('🔮 Status', callback_data='stats')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.HELP_TXT.format(query.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🟢 Tamil MVs Movies 2.0 🟢 ', url='https://t.me/+XfgDQL6fMiAzMmFl')
+            InlineKeyboardButton('Channel', url='https://t.me/+23cUpYdcgHtiOTVl'),
+            InlineKeyboardButton('Discussion', url='https://t.me/+EVI0nUzt1yljZGU1')
         ],[
-            InlineKeyboardButton('🟡 Tamil Dubbed Movies 🟡', url='https://t.me/+ZB2uIDoIDVs1YWJl')
-        ],[
-            InlineKeyboardButton('🔵 Movies Requesting Group 🔵', url='https://t.me/+EVI0nUzt1yljZGU1')
-        ],[
-            InlineKeyboardButton('🟣 MX Cinemas (Links) 🟣', url='https://t.me/+w2rNCoE9JMBkYjc9')
-        ], [
-            InlineKeyboardButton('⚪️ Web Series Tamil ⚪️', url='https://t.me/+kVEEFuW6bqJiZDk1')
-        ],[
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('🔐 Close', callback_data='close_data')
+            InlineKeyboardButton('🏠Home', callback_data='start'),
+            InlineKeyboardButton('❌ ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -460,81 +437,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "source":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='about')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.SOURCE_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "manuelfilter":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('⏹️ Buttons', callback_data='button')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.MANUELFILTER_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "button":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='manuelfilter')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.BUTTON_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "autofilter":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.AUTOFILTER_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "coct":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.CONNECTION_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "extra":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('👮‍♂️ Admin', callback_data='admin')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.EXTRAMOD_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "admin":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='extra')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.ADMIN_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
+            InlineKeyboardButton('⚡️ Cross Promotion ⚡️', callback_data='crossx')
+        ],[
+            InlineKeyboardButton('⬅️ Back', callback_data='start'),
             InlineKeyboardButton('♻️', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -553,8 +460,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rfrsh":
         await query.answer("Fetching MongoDb DataBase")
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('♻️', callback_data='rfrsh')
+            InlineKeyboardButton('⚡️ Cross Promotion ⚡️', callback_data='crossx')
+        ],[
+            InlineKeyboardButton('⬅️ Back', callback_data='start'),
+            InlineKeyboardButton('❌', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
@@ -566,6 +475,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
         free = get_size(free)
         await query.message.edit_text(
             text=script.STATUS_TXT.format(total, users, chats, monsize, free),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "crossx":
+        buttons = [[
+            InlineKeyboardButton('Contact Me', url='Https://t.me/BlackKing200')
+        ],[
+            InlineKeyboardButton('⬅️ Back', callback_data='stats'),
+            InlineKeyboardButton('❌', callback_data='close_data')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.CROSS_TEXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
