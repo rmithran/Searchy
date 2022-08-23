@@ -125,7 +125,7 @@ async def get_poster(query, bulk=False, id=False, file=None):
         "distributors": list_to_str(movie.get("distributors")),
         'release_date': date,
         'year': movie.get('year'),
-        'genres': list_to_str(movie.get("genres")),
+        'genres': list_to_hash(movie.get("genres")),
         'poster': movie.get('full-size cover url'),
         'plot': plot,
         'rating': str(movie.get("rating")),
@@ -254,6 +254,17 @@ def list_to_str(k):
         return ' '.join(f'{elem}, ' for elem in k)
     else:
         return ' '.join(f'{elem}, ' for elem in k)
+
+def list_to_hash(g):
+    if not g:
+        return "N/A"
+    elif len(g) == 1:
+        return '#'str(g[0])
+    elif MAX_LIST_ELM:
+        g = g[:int(MAX_LIST_ELM)]
+        return ' '.join(f'{elem} #'for elem in g)
+    else:
+        return ' '.join(f'{elem} #'for elem in g)
 
 def last_online(from_user):
     time = ""
