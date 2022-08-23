@@ -262,9 +262,9 @@ def list_to_hash(g):
         return str('#' + g[0])
     elif MAX_LIST_ELM:
         g = g[:int(MAX_LIST_ELM)]
-        return ' '.join(f'{elem} #'for elem in g)
+        return '#'.join(f'{elem} 'for elem in g)
     else:
-        return ' '.join(f'{elem} #'for elem in g)
+        return '#'.join(f'{elem} 'for elem in g)
 
 def last_online(from_user):
     time = ""
