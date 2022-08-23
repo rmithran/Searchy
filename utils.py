@@ -259,7 +259,7 @@ def list_to_hash(g):
     if not g:
         return "N/A"
     elif len(g) == 1:
-        return str('#' + g[0])
+        return str('#',g[0])
     elif MAX_LIST_ELM:
         g = g[:int(MAX_LIST_ELM)]
         return '#'.join(f'{elem} 'for elem in g)
